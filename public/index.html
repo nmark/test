@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mistral Chat</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: #f4f4f5;
+      color: #18181b;
+      display: flex;
+      justify-content: center;
+    }
+    main {
+      width: 100%;
+      max-width: 720px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+      gap: 12px;
+    }
+    h1 { font-size: 1.25rem; margin: 8px 0 0; }
+    #messages {
+      flex: 1;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 8px;
+      background: #fff;
+      border: 1px solid #e4e4e7;
+      border-radius: 12px;
+    }
+    .msg {
+      max-width: 80%;
+      padding: 10px 14px;
+      border-radius: 12px;
+      white-space: pre-wrap;
+      line-height: 1.4;
+    }
+    .msg.user { align-self: flex-end; background: #ffd803; color: #18181b; }
+    .msg.assistant { align-self: flex-start; background: #e4e4e7; }
+    .msg.error { align-self: flex-start; background: #fee2e2; color: #991b1b; }
+    form { display: flex; gap: 8px; }
+    input {
+      flex: 1;
+      padding: 12px 14px;
+      border: 1px solid #e4e4e7;
+      border-radius: 12px;
+      font-size: 1rem;
+    }
+    button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 12px;
+      background: #18181b;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:disabled { opacity: 0.5; cursor: default; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Mistral Chat <small>(mistral-small-latest)</small></h1>
+    <div id="messages"></div>
+    <form id="chat-form">
+      <input id="input" type="text" placeholder="Type a message..." autocomplete="off" required />
+      <button id="send" type="submit">Send</button>
+    </form>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
