@@ -1,30 +1,23 @@
 {
-  "name": "mistral-chat-flow",
+  "name": "chat-flow-mock",
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "React + TypeScript chat app with a React Flow conversation view, backed by the Mistral API (official TypeScript SDK)",
+  "description": "Frontend-only React + TypeScript chat demo with a React Flow conversation view and mocked data",
   "scripts": {
-    "dev": "concurrently -n api,web -c blue,green \"tsx watch server/server.ts\" \"vite client\"",
-    "build": "tsc -p server/tsconfig.json && tsc -p client/tsconfig.json && vite build client",
-    "start": "node dist/server.js"
+    "dev": "vite",
+    "build": "tsc -p tsconfig.json && vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@mistralai/mistralai": "^3.5.0",
     "@xyflow/react": "^13.0.2",
-    "concurrently": "^10.0.7",
-    "dotenv": "^18.0.10",
-    "express": "^5.3.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1"
   },
   "devDependencies": {
-    "@types/express": "^5.0.6",
-    "@types/node": "^26.6.6",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.3.0",
-    "tsx": "^4.23.15",
     "typescript": "^7.0.2",
     "vite": "^8.3.8"
   }

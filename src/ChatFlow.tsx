@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { Background, Controls, Edge, Node, ReactFlow } from '@xyflow/react';
-import { ChatMessage } from './api';
+import { ChatMessage } from './mock';
 
 function labelFor(content: string): string {
   return content.length > 140 ? `${content.slice(0, 140)}…` : content;

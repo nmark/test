@@ -55,26 +55,6 @@ main {
   overflow: hidden;
 }
 
-.hint {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #a1a1aa;
-  pointer-events: none;
-  margin: 0;
-}
-
-.error {
-  margin: 0;
-  padding: 8px 12px;
-  background: #fee2e2;
-  color: #991b1b;
-  border-radius: 8px;
-  font-size: 0.9rem;
-}
-
 form {
   display: flex;
   gap: 8px;
