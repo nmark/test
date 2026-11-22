@@ -23,7 +23,7 @@ type ChatMessage = {
 
 const app = express();
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '..', 'public')));
+app.use(express.static(path.join(__dirname, '..', 'client', 'dist')));
 
 app.post('/api/chat', async (req, res) => {
   const body = req.body as { messages?: ChatMessage[] } | undefined;
@@ -54,5 +54,5 @@ app.post('/api/chat', async (req, res) => {
 
 const port = Number(process.env.PORT ?? 3000);
 app.listen(port, () => {
-  console.log(`Chat app running at http://localhost:${port}`);
+  console.log(`API server running at http://localhost:${port}`);
 });

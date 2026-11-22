@@ -1,23 +1,31 @@
 {
-  "name": "mistral-chat-app",
+  "name": "mistral-chat-flow",
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Minimal chat web app calling the Mistral API with the official TypeScript SDK",
+  "description": "React + TypeScript chat app with a React Flow conversation view, backed by the Mistral API (official TypeScript SDK)",
   "scripts": {
-    "dev": "tsx watch src/server.ts",
-    "build": "tsc",
+    "dev": "concurrently -n api,web -c blue,green \"tsx watch server/server.ts\" \"vite client\"",
+    "build": "tsc -p server/tsconfig.json && tsc -p client/tsconfig.json && vite build client",
     "start": "node dist/server.js"
   },
   "dependencies": {
-    "@mistralai/mistralai": "^1.10.0",
-    "dotenv": "^17.2.3",
-    "express": "^4.21.2"
+    "@mistralai/mistralai": "^3.5.0",
+    "@xyflow/react": "^13.0.2",
+    "concurrently": "^10.0.7",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
   },
   "devDependencies": {
-    "@types/express": "^4.17.23",
-    "@types/node": "^22.18.0",
-    "tsx": "^4.20.4",
-    "typescript": "^5.9.3"
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8"
   }
 }
